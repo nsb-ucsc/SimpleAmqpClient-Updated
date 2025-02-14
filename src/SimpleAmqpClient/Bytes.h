@@ -1,9 +1,9 @@
 #ifndef SIMPLEAMQPCLIENT_BYTES_H
 #define SIMPLEAMQPCLIENT_BYTES_H
 
-#include <amqp.h>
-#include <boost/utility/string_ref.hpp>
+#include <rabbitmq-c/amqp.h>
 
+#include <boost/utility/string_ref.hpp>
 #include <string>
 
 namespace AmqpClient {

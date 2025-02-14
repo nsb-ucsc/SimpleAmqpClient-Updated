@@ -27,9 +27,9 @@
  */
 
 // Put these first to avoid warnings about INT#_C macro redefinition
-#include <amqp.h>
-#include <amqp_framing.h>
-#include <amqp_tcp_socket.h>
+#include <rabbitmq-c/amqp.h>
+#include <rabbitmq-c/framing.h>
+#include <rabbitmq-c/tcp_socket.h>
 #ifdef SAC_SSL_SUPPORT_ENABLED
 #include <amqp_ssl_socket.h>
 #endif
@@ -490,7 +490,7 @@ bool Channel::CheckExchangeExists(boost::string_ref exchange_name) {
     amqp_frame_t frame =
         m_impl->DoRpc(AMQP_EXCHANGE_DECLARE_METHOD, &declare, DECLARE_OK);
     m_impl->MaybeReleaseBuffersOnChannel(frame.channel);
-  } catch (const NotFoundException& e) {
+  } catch (const NotFoundException &e) {
     return false;
   }
   return true;
@@ -614,7 +614,7 @@ bool Channel::CheckQueueExists(boost::string_ref queue_name) {
     amqp_frame_t frame =
         m_impl->DoRpc(AMQP_QUEUE_DECLARE_METHOD, &declare, DECLARE_OK);
     m_impl->MaybeReleaseBuffersOnChannel(frame.channel);
-  } catch (const NotFoundException& e) {
+  } catch (const NotFoundException &e) {
     return false;
   }
   return true;

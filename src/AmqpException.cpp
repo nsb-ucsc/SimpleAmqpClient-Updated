@@ -28,9 +28,9 @@
 
 #include "SimpleAmqpClient/AmqpException.h"
 
-#include <amqp.h>
-#include <amqp_framing.h>
 #include <assert.h>
+#include <rabbitmq-c/amqp.h>
+#include <rabbitmq-c/framing.h>
 
 #include <boost/lexical_cast.hpp>
 
